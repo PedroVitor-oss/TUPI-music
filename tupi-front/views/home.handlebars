@@ -1,0 +1,49 @@
+<header>
+    <img src="/img/LOGO.png" alt="">
+    {{#if user.name }}<h3> Olá {{user.firstname}}</h3>{{/if}}
+</header>
+<div class="my-playlists">
+
+    <PLAYLIST title="Minha playlsit vazia" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
+    {{!-- <PLAYLIST title="Minha PLAYLIST 1" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
+    <PLAYLIST title="Minha PLAYLIST 1" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
+</div> --}}
+<div class="cont-search">
+    <h2>Buscar musca</h2>
+    <div class="cont-input">
+        <input type="text" placeholder="Pesquisar musica">
+        <button type="button"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="results">
+        {{!-- <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result> --}}
+    </div>
+</div>
+<div class="explorer">
+
+</div>
+
+
+<nav>
+    <ul>
+        <li><i class="fa-solid fa-list"></i><p>List</p></li>
+        <li class="center"><i class="fa-solid fa-house"></i><p>Home</p></li>
+        <li>
+            {{#if user.name }}
+            <a href="/profile">
+            {{else}}
+            <a href="/login">
+            {{/if}}
+            <i class="fa-solid fa-user"></i><p>User</p>
+            </a>
+            </li>
+
+    </ul>
+</nav>
+
+
+<script src="/js/ComponentsManage.js"></script>
+<script src="/js/SearchMusica.js"></script>

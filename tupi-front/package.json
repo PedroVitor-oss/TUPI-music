@@ -1,0 +1,21 @@
+{
+  "name": "tupi.player",
+  "version": "1.0.0",
+  "description": "tipo spotify",
+  "keywords": [
+    "music"
+  ],
+  "license": "ISC",
+  "author": "Pedro Vitor-oss",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.2"
+  }
+}

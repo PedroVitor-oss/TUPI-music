@@ -1,0 +1,57 @@
+<form action="/login" method="post">
+<h1>Sign Up</h1>
+<label for="name">
+    <input type="text" name="name" id="name"  required>
+    <span>Name</span>
+</label>
+<label for="email">
+    <input type="email" name="email" id="email"  required>
+    <span>Email</span>
+</label>
+<label for="password">
+    <input type="password" name="password" id="password"  required>
+    <span>Password</span>
+</label>
+
+<button>
+    Sign Up
+</button>
+
+</form>
+<p>Ja tem uma conta? <a href="/login">Faça login</a></p>
+<script>
+    // Seleciona todos os inputs
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+    // Verifica se já tem texto ao carregar a página
+    if (input.value) {
+        input.parentElement.classList.add('has-text');
+    }
+
+    // Adiciona evento para quando digitar
+    input.addEventListener('input', function() {
+        if (this.value) {
+            this.parentElement.classList.add('has-text');
+        } else {
+            this.parentElement.classList.remove('has-text');
+        }
+    });
+});
+
+$('form').on('submit', function() {
+    $('button').attr('disabled', 'disabled');
+    //fazer a verificaçao se os campos estao preenchidos
+    let isValid = true;
+    $('input[required]').each(function() {
+        if (!$(this).val()) {
+            isValid = false;
+        }
+    });
+    if (!isValid) {
+        $('button').removeAttr('disabled');
+    }
+});
+
+
+</script>
