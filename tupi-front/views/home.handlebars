@@ -15,35 +15,48 @@
         <button type="button"><i class="fas fa-search"></i></button>
     </div>
     <div class="results">
-        {{!-- <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
-        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
-        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
-        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
-        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result> --}}
+        {{!-- <Result title="Vandalo" auth="Cronicas de um babaca"
+            img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg">
+        </Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg">
+        </Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg">
+        </Result>
+        <Result title="Vandalo" auth="Cronicas de um babaca" img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg">
+        </Result> --}}
     </div>
 </div>
 <div class="explorer">
 
 </div>
-
+<PlayerView class="" name="forever young" auth="jonas" banner="" state="paused"></PlayerView>
 
 <nav>
     <ul>
-        <li><i class="fa-solid fa-list"></i><p>List</p></li>
-        <li class="center"><i class="fa-solid fa-house"></i><p>Home</p></li>
+        <li><i class="fa-solid fa-list"></i>
+            <p>List</p>
+        </li>
+        <li class="center"><i class="fa-solid fa-house"></i>
+            <p>Home</p>
+        </li>
         <li>
             {{#if user.name }}
             <a href="/profile">
-            {{else}}
-            <a href="/login">
-            {{/if}}
-            <i class="fa-solid fa-user"></i><p>User</p>
-            </a>
-            </li>
+                {{else}}
+                <a href="/login">
+                    {{/if}}
+                    <i class="fa-solid fa-user"></i>
+                    <p>User</p>
+                </a>
+        </li>
 
     </ul>
 </nav>
 
 
+
+
 <script src="/js/ComponentsManage.js"></script>
+<script src="/js/PlayerControler.js"></script>
 <script src="/js/SearchMusica.js"></script>

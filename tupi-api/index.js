@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 );
 app.get("/search/:s", async (req, res) => {
     console.log("GET - Search")
-    youTube.search(req.params.s, 2, function(error, result) {
+    youTube.search(req.params.s+" topic", 2, function(error, result) {
   if (error) {
     console.log(error);
   }

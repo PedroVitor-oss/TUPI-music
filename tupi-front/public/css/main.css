@@ -5,10 +5,11 @@ body {
     padding: 0;
     background-color: #292929;
     color: #fff;
+    overflow: hidden;
 }
 
 header {
-    display:flex;
+    display: flex;
 
     & img {
         margin-top: 20px;
@@ -69,6 +70,12 @@ nav {
             justify-content: center;
         }
 
+        & li a {
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+        }
+
         & li {
             display: flex;
             flex-direction: column;
@@ -77,14 +84,155 @@ nav {
     }
 }
 
+PlayerView.full {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(60deg, rgba(240, 150, 68, 1) 0%, rgba(242, 83, 46, 1) 100%);
+
+    & header {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+    }
+    & div.banner {
+        /* background-color: blue; */
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex:1;
+        & img {
+            scale: 6;
+        }
+    }
+    & div.info{
+        width: 100vw;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        & .actions {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            & button{
+                display: block;
+            };
+        }
+    }
+    & div.controles{
+        width: 100vw;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        & input {
+            display: block;
+            width: 90%;
+            accent-color: white;
+            
+        }
+
+    
+
+      
+        & div.buttons{
+            display: flex;
+            gap: 50px;
+            & button {
+                display: block;
+                font-size: 30px;
+            }
+        }
+    }
+    
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ff4500;
+    
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }     
+
+PlayerView {
+    display: flex;
+    background: #292929;
+    position: absolute;
+    top: calc(100vh - 13vh - 45px);
+    left: 20px;
+    width: 20px;
+    bottom: 13vh;
+    width: 90%;
+    height: 45px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000;
+    justify-content: space-around;
+    align-items: center;
+    transition: 0.5s;
+
+    & header,
+    input {
+        display: none;
+    }
+
+    & img {
+        background-color: #858585;
+        width: 45px;
+        height: 25px;
+        transition: .5;
+    }
+
+    & div.info {
+
+        & h4,
+        p {
+            margin: 0;
+        }
+
+        & p {
+            color: #555555;
+        }
+    }
+
+    & button#btn-play {
+        display: block;
+    }
+
+    & button {
+        display: none;
+        border: none;
+        background-color: transparent;
+        color: #fff;
+        font-size: 20px;
+    }
+}
+
 div.cont-search {
     width: 100%;
     /* height: 200px; */
     padding: 5%;
+    padding-left: 0;
     border-bottom: 1px solid #444444;
 
     & div.cont-input {
-        width: 90%;
+        width: 100%;
         background-color: #555555;
         border-radius: 10px;
         /* margin: auto; */
@@ -97,6 +245,7 @@ div.cont-search {
             background-color: transparent;
             border: none;
             outline: none;
+            color: #fff;
         }
 
         & button {

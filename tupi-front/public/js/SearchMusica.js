@@ -1,3 +1,9 @@
+ let idVideSeach = [];
+ let prePlayerVideo = [];
+
+ 
+ 
+ 
  function Search(){
         const input = document.querySelector('.cont-input input');
         const button = document.querySelector('.cont-input button');
@@ -16,12 +22,15 @@
                 .then(data => {
                     // Assuming data is an array of results
                     resultsContainer.innerHTML = '';
+                    idVideSeach = [];
                     data.items.forEach(item => {
                         const resultComponent = document.createElement('Result');
                         resultComponent.setAttribute('title', item.snippet.title);
                         resultComponent.setAttribute('auth', item.snippet.channelTitle);
                         resultComponent.setAttribute('img', item.snippet.thumbnails.default.url);
                         resultsContainer.appendChild(resultComponent);
+
+                        console.log(item.id);
                     });
                     console.log(data);
                                 Makeocomponents();
