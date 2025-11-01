@@ -6,14 +6,14 @@
 
     <PLAYLIST title="Minha playlsit vazia" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
     {{!-- <PLAYLIST title="Minha PLAYLIST 1" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
-    <PLAYLIST title="Minha PLAYLIST 1" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>
-</div> --}}
+    <PLAYLIST title="Minha PLAYLIST 1" img="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"></PLAYLIST>--}}
+</div> 
 <div class="cont-search">
     <h2>Buscar musca</h2>
-    <div class="cont-input">
+    <form class="cont-input" id="form-seach">
         <input type="text" placeholder="Pesquisar musica">
-        <button type="button"><i class="fas fa-search"></i></button>
-    </div>
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
     <div class="results">
         {{!-- <Result title="Vandalo" auth="Cronicas de um babaca"
             img="https://i.ytimg.com/vi/IOvP-DJfOaQ/mqdefault.jpg"></Result>
@@ -53,6 +53,9 @@
 
     </ul>
 </nav>
+
+    <div id="player"></div>
+
 
 
 

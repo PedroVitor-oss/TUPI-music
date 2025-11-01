@@ -50,7 +50,7 @@ nav {
     width: 100vw;
     left: 0;
     height: 68px;
-
+    z-index: 20;
     & ul {
         display: flex;
         justify-content: space-around;
@@ -68,6 +68,7 @@ nav {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transition: .5s;
         }
 
         & li a {
@@ -83,7 +84,16 @@ nav {
         }
     }
 }
+nav.player-opened {
+    background-color: transparent;
+    box-shadow: none;
+    & ul  li.center {
+        background: transparent !important;
+        transform: translateY(0px);
 
+    }
+
+}
 PlayerView.full {
     top: 0;
     left: 0;
@@ -231,7 +241,7 @@ div.cont-search {
     padding-left: 0;
     border-bottom: 1px solid #444444;
 
-    & div.cont-input {
+    & .cont-input {
         width: 100%;
         background-color: #555555;
         border-radius: 10px;
@@ -255,6 +265,11 @@ div.cont-search {
         }
     }
 
+    & .result-channel img{
+        width: 90px !important;
+        height: 90px;
+        border-radius: 50%;
+    }
     .results {
         max-height: 500px;
         overflow-y: scroll;
@@ -267,6 +282,7 @@ div.cont-search {
 
             & img {
                 width: 150px;
+                height: 90px;
             }
 
             & .result-info {

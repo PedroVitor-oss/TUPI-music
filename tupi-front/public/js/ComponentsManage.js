@@ -4,9 +4,16 @@ function Makeocomponents() {
 
     results.forEach(result => {
         const title = result.getAttribute('title');
-        const auth = result.getAttribute('auth');
+        let auth = result.getAttribute('auth');
         const img = result.getAttribute('img');
-
+        const type = result.getAttribute('type');
+        if(type === "channel"){
+            auth = "";
+        }else{
+            result.addEventListener("click", () => {
+                PlayMusic(result.getAttribute('index'));
+            });
+        }
         //create the inner HTML structure
         result.innerHTML = `
                 <div class="result-item">
@@ -40,8 +47,9 @@ function Makeocomponents() {
     let name = PlayerView.getAttribute("name");
     let statebutton = PlayerView.getAttribute("state");
     let auth = PlayerView.getAttribute("auth");
+    let index = PlayerView.getAttribute("index");
 
-    let htmlbutton = statebutton == "paused" ? `<button id="btn-play" onclick="PauseButton()"><i class="fa-solid fa-play"></i></button>` : `<button id="btn-play" onclick="PauseButton()"><i class="fa-solid fa-pause"></i></button>`;
+    let htmlbutton = statebutton == "paused" ? `<button id="btn-play" onclick="playVideo(${index})"><i class="fa-solid fa-play"></i></button>` : `<button id="btn-play" onclick="playVideo(${index})"><i class="fa-solid fa-pause"></i></button>`;
     PlayerView.addEventListener("click", () => {
         //FullPlayerView();
     });
