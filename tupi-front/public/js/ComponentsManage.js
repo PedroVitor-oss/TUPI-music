@@ -11,7 +11,8 @@ function Makeocomponents() {
             auth = "";
         }else{
             result.addEventListener("click", () => {
-                PlayMusic(result.getAttribute('index'));
+               // PlayMusic(result.getAttribute('index'));
+               SelectMusic(result.getAttribute('index'),true);
             });
         }
         //create the inner HTML structure
@@ -49,7 +50,7 @@ function Makeocomponents() {
     let auth = PlayerView.getAttribute("auth");
     let index = PlayerView.getAttribute("index");
 
-    let htmlbutton = statebutton == "paused" ? `<button id="btn-play" onclick="playVideo(${index})"><i class="fa-solid fa-play"></i></button>` : `<button id="btn-play" onclick="playVideo(${index})"><i class="fa-solid fa-pause"></i></button>`;
+    let htmlbutton = statebutton == "paused" ? `<button id="btn-play" onclick="playVideo(${index})"><i class="fa-solid fa-play"></i></button>` : `<button id="btn-play" onclick="PauseButton(${index})"><i class="fa-solid fa-pause"></i></button>`;
     PlayerView.addEventListener("click", () => {
         //FullPlayerView();
     });
