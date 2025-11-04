@@ -28,6 +28,7 @@
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",
     "axios": "1.9.0",
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "ffmpeg-static": "^5.2.0",

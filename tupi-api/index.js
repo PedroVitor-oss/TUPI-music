@@ -13,7 +13,11 @@ var youTube = new YT();
 
 
 import express from 'express';;
+import  bodyParser from 'body-parser';
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 youTube.setKey("AIzaSyBq-qZg2SJrD0VQvKyrHe2O9k8GX1xda3k");
 
@@ -49,6 +53,13 @@ app.get('/', (req, res) => {
 );
 app.get("/search/:s", async (req, res) => {
     console.log("GET - Search")
+    // if(!req.body.searchWeb){
+    //   res.json({error:"no search term provided"});
+    console.log(req.body);
+    res.send("oie")
+      return;
+    // }
+
     youTube.search(req.params.s+" topic", 2, function(error, result) {
   if (error) {
     console.log(error);
